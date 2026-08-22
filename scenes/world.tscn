@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w4xrt7msjlw8"]
+
+[ext_resource type="PackedScene" uid="uid://bxbuavgum3vy1" path="res://scenes/objects/player.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://c27ysi8vks2mu" path="res://scenes/objects/cube.tscn" id="2_4wyf3"]
+
+[sub_resource type="Environment" id="Environment_x2soh"]
+reflected_light_source = 2
+
+[node name="World" type="Node3D" unique_id=10642601]
+
+[node name="Cube" parent="." unique_id=1101765489 instance=ExtResource("2_4wyf3")]
+transform = Transform3D(27.902384, -0.03477706, 0.70116633, 1.6056397, 0.61676407, -0.65142, -0.93079746, 0.021420239, 19.895058, -3.6938834, -1.7601606, 3.9754508)
+
+[node name="Player" parent="." unique_id=2133441062 instance=ExtResource("1_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6577168, 0, 1.0822911)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=213323794]
+transform = Transform3D(0.795475, -0.5698242, 0.20620368, 0.28204942, 0.64932346, 0.706277, -0.5363466, -0.50366604, 0.6772391, 0, 12.419864, 5.2860084)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1331099736]
+environment = SubResource("Environment_x2soh")

@@ -3,16 +3,32 @@
 [ext_resource type="Script" uid="uid://c15wdhvomd2ik" path="res://scripts/Player/player.gd" id="1_a8lix"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+size = Vector3(1, 2.288208, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
+size = Vector3(1, 0.48632813, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbtxa"]
+albedo_color = Color(0.27058825, 1, 1, 0.99607843)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2soh"]
+size = Vector3(1, 2.2644577, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=2133441062]
 script = ExtResource("1_a8lix")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1102511978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1980398, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1980398, 0.644104, 0)
 mesh = SubResource("BoxMesh_qgm6r")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1792298157]
+transform = Transform3D(0.1956939, 0, 0, 0, 0.71546257, 0, 0, 0, 0.84807664, -0.5556565, 0.9111476, 0.0014425516)
+mesh = SubResource("BoxMesh_x2soh")
+surface_material_override/0 = SubResource("StandardMaterial3D_mbtxa")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=568764651]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.197666, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1921762, 0.6547551, 0)
 shape = SubResource("BoxShape3D_x2soh")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=285898186]
+transform = Transform3D(0.02281428, 0, 0.99973977, 0, 1, 0, -0.99973977, 0, 0.02281428, 0.53962135, 1.6113844, 0)
