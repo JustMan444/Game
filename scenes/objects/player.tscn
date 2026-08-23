@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bxbuavgum3vy1"]
 
 [ext_resource type="Script" uid="uid://c15wdhvomd2ik" path="res://scripts/Player/player.gd" id="1_a8lix"]
-[ext_resource type="Script" uid="uid://cy4jf10ouoowo" path="res://scripts/Player/camera_3d.gd" id="2_2147m"]
+[ext_resource type="Script" uid="uid://umtk85bhcpnw" path="res://scripts/Player/Try.gd" id="2_2147m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
 size = Vector3(1, 2.288208, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2soh"]
+size = Vector3(1, 2.2644577, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
 size = Vector3(1, 0.48632813, 1)
@@ -12,24 +15,24 @@ size = Vector3(1, 0.48632813, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbtxa"]
 albedo_color = Color(0.27058825, 1, 1, 0.99607843)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x2soh"]
-size = Vector3(1, 2.2644577, 1)
-
 [node name="Player" type="CharacterBody3D" unique_id=2133441062]
+transform = Transform3D(-0.0060696667, 0, 0.9999816, 0, 1, 0, -0.9999816, 0, -0.0060696667, 0, 0, 0)
 script = ExtResource("1_a8lix")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1102511978]
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1102511978]
 mesh = SubResource("BoxMesh_qgm6r")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1792298157]
-transform = Transform3D(0.1956939, 0, 0, 0, 0.71546257, 0, 0, 0, 0.84807664, -0.5556565, 0.9111476, 0.0014425516)
-mesh = SubResource("BoxMesh_x2soh")
-surface_material_override/0 = SubResource("StandardMaterial3D_mbtxa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=568764651]
 shape = SubResource("BoxShape3D_x2soh")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=285898186 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.02281428, 0, 0.99973977, 0, 1, 0, -0.99973977, 0, 0.02281428, -0.43430734, 0.9496101, 0)
+[node name="Node3D" type="Node3D" parent="." unique_id=1523822518]
+
+[node name="Head" type="MeshInstance3D" parent="Node3D" unique_id=1792298157]
+transform = Transform3D(0.1956939, 0, -1.3969839e-09, 0, 0.71546257, 0, 0, 0, 0.84807664, -0.5556563, 0.9111476, 0.0014425528)
+mesh = SubResource("BoxMesh_x2soh")
+surface_material_override/0 = SubResource("StandardMaterial3D_mbtxa")
+
+[node name="Camera1person" type="Camera3D" parent="Node3D/Head" unique_id=285898186 node_paths=PackedStringArray("player")]
+transform = Transform3D(0.11658148, 0, 5.108692, 0, 1.3976971, 0, -1.178832, 0, 0.026901206, -0.48131442, 0.05375898, -0.0032436077)
 script = ExtResource("2_2147m")
-target = NodePath("..")
+player = NodePath("../../..")
