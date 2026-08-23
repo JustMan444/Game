@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Game for Game jam"
-run/main_scene="uid://b1yyqdf4yuhhf"
+run/main_scene="uid://w4xrt7msjlw8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ManagerText="*uid://bapbnfhotji7l"
+GlobalVars="*uid://cti7dk65g4rva"
+Globalnos="*uid://ddwrrc5y6j1j5"
 
 [display]
 

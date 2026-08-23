@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1yyqdf4yuhhf"]
 
 [ext_resource type="PackedScene" uid="uid://d1vhq8sfeplqb" path="res://scenes/objects/player_2d.tscn" id="1_2q6dc"]
+[ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="1_w7c3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
 size = Vector2(5.170333, 41.62745)
@@ -22,6 +23,13 @@ position = Vector2(-2.3298204, -21.991863)
 rotation = -3.1415927
 scale = Vector2(6.3550973, -23.476088)
 mesh = SubResource("BoxMesh_qgm6r")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D/MeshInstance2D" unique_id=1579364971]
+position = Vector2(0.008929968, 3.8892984)
+rotation = -3.1415927
+scale = Vector2(6.3550973, -23.476088)
+mesh = SubResource("BoxMesh_qgm6r")
+texture = ExtResource("1_w7c3h")
 
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_2q6dc")]
 position = Vector2(-1.5220604, 70.49177)
