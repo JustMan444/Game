@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="1_w7c3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
-size = Vector2(5.170333, 41.62745)
+size = Vector2(33.59568, 41.62745)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
 
@@ -14,8 +14,13 @@ scale = Vector2(-299.5939, -5.092793)
 [node name="Node2D" type="StaticBody2D" parent="." unique_id=499625618]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=1714840684]
-position = Vector2(-2.748719, -31.024221)
-scale = Vector2(1.0003166, 0.99802816)
+position = Vector2(-16.965889, -31.02421)
+scale = Vector2(1.0003165, 0.998028)
+shape = SubResource("RectangleShape2D_qgm6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CollisionShape2D" unique_id=1133826500]
+position = Vector2(6.309473, 873.7397)
+scale = Vector2(1.0003165, 0.998028)
 shape = SubResource("RectangleShape2D_qgm6r")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D" unique_id=128060304]
@@ -32,5 +37,5 @@ mesh = SubResource("BoxMesh_qgm6r")
 texture = ExtResource("1_w7c3h")
 
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_2q6dc")]
-position = Vector2(-1.5220604, 70.49177)
+position = Vector2(-9.195782, 1027.5305)
 scale = Vector2(-0.0034010895, -0.18132715)

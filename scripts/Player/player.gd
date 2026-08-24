@@ -7,6 +7,8 @@ const JUMP_VELOCITY = 4.5
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if Input.is_key_pressed(KEY_R):
+		GameManager.switch_to_scene("res://scenes/level.tscn")
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
