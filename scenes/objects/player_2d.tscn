@@ -24,6 +24,8 @@ shape = SubResource("RectangleShape2D_qgm6r")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=520289947]
 scale = Vector2(4.5199995, 26.800003)
 zoom = Vector2(0.65, 0.65)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [node name="HintLabel" type="Label" parent="." unique_id=450903417]
 offset_right = 40.0
@@ -35,3 +37,6 @@ offset_bottom = 23.0
 position = Vector2(48.499985, -33)
 scale = Vector2(2.3469188, 2.966494)
 shape = SubResource("RectangleShape2D_x2soh")
+
+[connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

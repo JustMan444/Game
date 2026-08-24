@@ -49,11 +49,3 @@ func _on_InteractZone_body_exited(body):
 		can_interact = false
 		if hint_label:
 			hint_label.hide()
-
-
-func _on_interact_zone_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_interact_zone_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
