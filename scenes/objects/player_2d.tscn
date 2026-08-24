@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
 size = Vector2(734, 735)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2soh"]
+size = Vector2(1005.99976, 496.20868)
+
 [node name="Player2D" type="CharacterBody2D" unique_id=186757084]
 script = ExtResource("1_itixg")
 
@@ -21,3 +24,14 @@ shape = SubResource("RectangleShape2D_qgm6r")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=520289947]
 scale = Vector2(4.5199995, 26.800003)
 zoom = Vector2(0.65, 0.65)
+
+[node name="HintLabel" type="Label" parent="." unique_id=450903417]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractZone" type="Area2D" parent="." unique_id=807435267]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1492504923]
+position = Vector2(48.499985, -33)
+scale = Vector2(2.3469188, 2.966494)
+shape = SubResource("RectangleShape2D_x2soh")
