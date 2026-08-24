@@ -1,0 +1,14 @@
+{
+  "en": {
+	"greeting": {
+	  "speaker": "NPC",
+	  "text": "Hello, traveler!"
+	}
+  },
+  "ru": {
+	"greeting": {
+	  "speaker": "NPC",
+	  "text": "Привет, путник!"
+	}
+  }
+}

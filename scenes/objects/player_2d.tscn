@@ -38,5 +38,7 @@ position = Vector2(48.499985, -33)
 scale = Vector2(2.3469188, 2.966494)
 shape = SubResource("RectangleShape2D_x2soh")
 
+[connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
+[connection signal="area_exited" from="InteractZone" to="." method="_on_interact_zone_area_exited"]
 [connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
 [connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

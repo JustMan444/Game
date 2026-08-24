@@ -46,21 +46,101 @@ func _physics_process(delta):
 	if was_in_air and is_on_floor():
 		bounce_camera()
 	was_in_air = not is_on_floor()
+#func _process(_delta):
+	## Ультимативный поиск коллизий без сигналов прямо каждый кадр!
+	#_check_interaction_direct()
 
-func _on_InteractZone_body_entered(body):
-	if body.has_method("interact"):
+#func _check_interaction_direct():
+	#if not has_node("InteractZone"): return
+	#
+	## Берем список ВЕХ зон, которые сейчас физически пересекают наш "щуп"
+	#var overlapping_areas = $InteractZone.get_overlapping_areas()
+	#
+	#var found_object = null
+	#for area in overlapping_areas:
+		#if area.has_method("interact"):
+			#found_object = area
+			#break # Нашли первый попавшийся интерактивный объект — берём его
+			#
+	#if found_object:
+		#nearby_object = found_object
+		#can_interact = true
+		#if hint_label:
+			#hint_label.text = "Нажмите E"
+			#hint_label.show()
+	#else:
+		## Если под ногами ничего нет — сбрасываем
+		#nearby_object = null
+		#can_interact = false
+		#if hint_label:
+			#hint_label.hide()
+
+## === 1. РАБОТА С ФИЗИЧЕСКИМИ ТЕЛАМИ (StaticBody2D, CharacterBody2D) ===
+#func _on_InteractZone_body_entered(body):
+	#if body != self and body.has_method("interact"):
+		#nearby_object = body
+		#can_interact = true
+		#if hint_label:
+			#hint_label.text = "Нажмите E"
+			#hint_label.show()
+#
+#func _on_InteractZone_body_exited(body):
+	#if body == nearby_object:
+		#_reset_interaction()
+#
+## === 2. РАБОТА С ЗОНАМИ (Area2D) ===
+#func _on_InteractZone_area_entered(area):
+	#if area.has_method("interact"):
+		#nearby_object = area
+		#can_interact = true
+		#if hint_label:
+			#hint_label.text = "Нажмите E"
+			#hint_label.show()
+#
+#func _on_InteractZone_area_exited(area):
+	#if area == nearby_object:
+		#_reset_interaction()
+#
+## Микро-функция сброса, чтобы не дублировать код
+#func _reset_interaction():
+	#nearby_object = null
+	#can_interact = false
+	#if hint_label:
+		#hint_label.hide()
+
+# === 1. РАБОТА С ФИЗИЧЕСКИМИ ТЕЛАМИ (StaticBody2D, CharacterBody2D) ===
+func _on_interact_zone_body_entered(body: Node2D) -> void:
+	if body != self and body.has_method("interact"):
 		nearby_object = body
 		can_interact = true
 		if hint_label:
 			hint_label.text = "Нажмите E"
 			hint_label.show()
 
-func _on_InteractZone_body_exited(body):
+func _on_interact_zone_body_exited(body: Node2D) -> void:
 	if body == nearby_object:
-		nearby_object = null
-		can_interact = false
+		_reset_interaction()
+
+# === 2. РАБОТА С ЗОНАМИ (Area2D - касса, бомж, перец) ===
+func _on_interact_zone_area_entered(area: Area2D) -> void:
+	if area.has_method("interact"):
+		nearby_object = area
+		can_interact = true
 		if hint_label:
-			hint_label.hide()
+			hint_label.text = "Нажмите E"
+			TextManager.show_text("Этот текст будет печататься медленно", 0.5, 50.0)
+			hint_label.show()
+
+func _on_interact_zone_area_exited(area: Area2D) -> void:
+	if area == nearby_object:
+		_reset_interaction()
+
+# Универсальная функция сброса
+func _reset_interaction() -> void:
+	nearby_object = null
+	can_interact = false
+	if hint_label:
+		hint_label.hide()
 
 func bounce_camera():
 	var cam = get_viewport().get_camera_2d()

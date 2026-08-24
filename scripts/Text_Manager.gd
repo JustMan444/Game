@@ -4,28 +4,47 @@ var subtitle_instance = null
 var text_label = null
 var panel = null 
 var is_showing = false
-
 func _ready():
-	# Загружаем сцену отложенно, чтобы избежать конфликта а
+	# Загружаем сцену
 	var scene = load("res://scenes/SubtitleUI.tscn")
 	subtitle_instance = scene.instantiate()
 	
-	# Добавляем отложенно
+	# Добавляем в дерево ОТЛОЖЕННО (чтобы избежать конфликтов)
 	get_tree().root.add_child.call_deferred(subtitle_instance)
 	
-	# Ждём один кадр, чтобы узлы успели создаться
+	# Ждём один кадр, чтобы узлы успели инициализироваться
 	await get_tree().process_frame
 	
-	# Ищем узлы по правильным путям (проверь структуру!)
+	# Теперь ищем узлы (они уже в дереве)
 	panel = subtitle_instance.get_node("Background")
-	text_label = subtitle_instance.get_node("Background/MarginContainer/TextLabel")
+	text_label = subtitle_instance.get_node("Background/MarginContainer/RichTextLabel")
 	
 	if panel:
 		panel.modulate.a = 0.0
 	else:
-		print("Text_Manager: Panel не найден!")
+		print("Text_Manager: ОШИБКА! Нода Background не найдена внутри SubtitleUI.tscn!")
+#func _ready():
+	## Загружаем сцену отложенно, чтобы избежать конфликта а
+	#var scene = load("res://scenes/SubtitleUI.tscn")
+	#subtitle_instance = scene.instantiate()
+	#
+	## Добавляем отложенно
+	#get_tree().root.add_child.call_deferred(subtitle_instance)
+	#
+	## Ждём один кадр, чтобы узлы успели создаться
+	#await get_tree().process_frame
+	#
+	## Ищем узлы по правильным путям (проверь структуру!)
+	#panel = subtitle_instance.get_node("Background")
+	#text_label = subtitle_instance.get_node("Background/MarginContainer/RichTextLabel")
+	#
+	#if panel:
+		#panel.modulate.a = 0.0
+	#else:
+		#print("Text_Manager: Panel не найден!")
 
 func show_text(text: String, speed: float = 0.05, duration: float = 2.0):
+	
 	if not panel or not text_label:
 		print("Text_Manager: узлы не инициализированы")
 		return

@@ -19,6 +19,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/MarginContainer" unique_id=1554381453]
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/MarginContainer" unique_id=467334705]
 layout_mode = 2
-fit_content = true

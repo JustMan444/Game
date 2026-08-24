@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://de1p8gl7bk5fa"]
+
+[ext_resource type="PackedScene" uid="uid://d1vhq8sfeplqb" path="res://scenes/objects/player_2d.tscn" id="1_0f17b"]
+[ext_resource type="Script" uid="uid://7lswxl3s4rvy" path="res://scripts/Door/Door.gd" id="2_huq6g"]
+[ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="3_huq6g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbtxa"]
+size = Vector2(90.96745, 261.02365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2soh"]
+size = Vector2(3868, 186.3548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
+size = Vector2(335.64172, 191.54623)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n34aw"]
+size = Vector2(237.96301, 141.62012)
+
+[node name="БудкаОхраны" type="Node2D" unique_id=1092935491]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=262952041]
+position = Vector2(22444, -5303)
+scale = Vector2(8523.5, 2266.5)
+mesh = SubResource("BoxMesh_qgm6r")
+
+[node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_0f17b")]
+position = Vector2(-3264, 466)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=232853918]
+scale = Vector2(1, 6.8400006)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1893814697]
+position = Vector2(-10322, -33.625694)
+scale = Vector2(46.720005, 2.22807)
+shape = SubResource("RectangleShape2D_mbtxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=280624100]
+position = Vector2(2218, -46.345024)
+scale = Vector2(1, 2.9999998)
+shape = SubResource("RectangleShape2D_x2soh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545086285]
+position = Vector2(-4112.5, 404.60526)
+scale = Vector2(49.24, 2.023392)
+shape = SubResource("RectangleShape2D_qgm6r")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=432924909]
+position = Vector2(-384, 286)
+script = ExtResource("2_huq6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=809121119]
+position = Vector2(-833.5, 122)
+scale = Vector2(9.72, 14.319999)
+shape = SubResource("RectangleShape2D_n34aw")
+
+[node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=1305869176]
+position = Vector2(-1736, 867.99994)
+scale = Vector2(0.3444588, 0.450618)
+texture = ExtResource("3_huq6g")
