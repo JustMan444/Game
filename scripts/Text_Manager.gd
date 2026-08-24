@@ -2,11 +2,11 @@ extends Node
 
 var subtitle_instance = null
 var text_label = null
-var panel = null
+var panel = null 
 var is_showing = false
 
 func _ready():
-	# Загружаем сцену отложенно, чтобы избежать конфликта
+	# Загружаем сцену отложенно, чтобы избежать конфликта а
 	var scene = load("res://scenes/SubtitleUI.tscn")
 	subtitle_instance = scene.instantiate()
 	
