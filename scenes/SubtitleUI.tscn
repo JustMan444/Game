@@ -1,23 +1,29 @@
 [gd_scene format=3 uid="uid://chhmbxi8s4rxw"]
 
-[node name="глист мистер биста" type="Control" unique_id=475738139]
-layout_mode = 3
+[node name="глист мистер биста" type="CanvasLayer" unique_id=447447850]
+scale = Vector2(17.472242, 16.459978)
+transform = Transform2D(17.472242, 0, 0, 16.459978, 0, 0)
+
+[node name="Background" type="Panel" parent="." unique_id=444128182]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 528.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(17.472242, 16.459978)
-
-[node name="Background" type="Panel" parent="." unique_id=444128182]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1118411758]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(120, 120)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Background/MarginContainer" unique_id=467334705]
 layout_mode = 2
