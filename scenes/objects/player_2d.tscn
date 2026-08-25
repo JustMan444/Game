@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1vhq8sfeplqb"]
 
 [ext_resource type="Script" uid="uid://c0p78p0s0x2d" path="res://scripts/Player2D/player_2d.gd" id="1_itixg"]
-[ext_resource type="Texture2D" uid="uid://bbj5lv8yl221d" path="res://assets/images/Снимок экрана 2026-08-23 144101.png" id="2_yq0xm"]
+[ext_resource type="Texture2D" uid="uid://bbj5lv8yl221d" path="res://assets/images/Обезьяна.png" id="2_yq0xm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
 size = Vector2(734, 735)
@@ -11,6 +11,7 @@ size = Vector2(1005.99976, 496.20868)
 
 [node name="Player2D" type="CharacterBody2D" unique_id=186757084]
 script = ExtResource("1_itixg")
+jump_velocity = -1000.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1531746195]
 texture = ExtResource("2_yq0xm")

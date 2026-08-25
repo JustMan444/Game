@@ -26,6 +26,8 @@ Xdd="uid://cns5uddxvelpo"
 InputManager="*uid://boq0cxajgvyx3"
 TextManager="*uid://7lrbgbtndwps"
 Subtitle="*uid://cu6bx3e5dp6f4"
+ShaderManager="*uid://cd5byodykmyje"
+MusicManager="*uid://hax57yr18uie"
 
 [display]
 

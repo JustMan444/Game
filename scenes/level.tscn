@@ -39,3 +39,5 @@ texture = ExtResource("1_w7c3h")
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_2q6dc")]
 position = Vector2(-9.195782, 1027.5305)
 scale = Vector2(-0.0034010895, -0.18132715)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=505215486]

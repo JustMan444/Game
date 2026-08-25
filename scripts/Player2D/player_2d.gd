@@ -28,11 +28,6 @@ func _physics_process(delta):
 	# Прыжок
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-	if Input.is_key_pressed(KEY_F):
-		print("TEST")
-		#TextManager.show_text("Этот текст будет печататься медленно", 0.5, 10.0)
-		#TextManager.show_text("ffffff")
-		Subtitle.show_text("Its text for dialog its just test",0.1,15)
 	# Горизонтальное движение
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:

@@ -3,6 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://d1vhq8sfeplqb" path="res://scenes/objects/player_2d.tscn" id="1_0f17b"]
 [ext_resource type="Script" uid="uid://7lswxl3s4rvy" path="res://scripts/Door/Door.gd" id="2_huq6g"]
 [ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="3_huq6g"]
+[ext_resource type="Script" uid="uid://8pl02g7lai6v" path="res://scenes/Coffee.gd" id="4_hsrjk"]
+[ext_resource type="Texture2D" uid="uid://bbj5lv8yl221d" path="res://assets/images/Обезьяна.png" id="5_i84a3"]
+[ext_resource type="Texture2D" uid="uid://b0g1n57c13gd5" path="res://assets/images/Стена.png" id="6_wae84"]
+[ext_resource type="Texture2D" uid="uid://drakhm8146exb" path="res://assets/images/Кофе.png" id="7_ncnac"]
+[ext_resource type="Texture2D" uid="uid://2u31wm16yeor" path="res://assets/images/Дверь.png" id="8_vqmx0"]
+[ext_resource type="Texture2D" uid="uid://b4swi8beu26xd" path="res://assets/images/Снимок экрана 2026-08-25 130600.png" id="9_ncnac"]
+[ext_resource type="Texture2D" uid="uid://bg83kc6ocuin4" path="res://assets/images/Снимок экрана 2026-08-25 183614.png" id="10_awq4u"]
+[ext_resource type="Texture2D" uid="uid://b3e61g528evv4" path="res://assets/images/Снимок экрана 2026-08-25 182142.png" id="10_jb47g"]
+[ext_resource type="Texture2D" uid="uid://dr7f1vtgwqilr" path="res://assets/images/Снимок экрана 2026-08-25 181811.png" id="10_vqmx0"]
+[ext_resource type="Texture2D" uid="uid://cf3et8dvgj3rc" path="res://assets/images/Снимок экрана 2026-08-25 183521.png" id="13_awq4u"]
+[ext_resource type="Texture2D" uid="uid://dyx3oqsrpk3xf" path="res://assets/images/Снимок экрана 2026-08-25 182426.png" id="13_w2ktc"]
+[ext_resource type="Texture2D" uid="uid://dnddivyj7eg5i" path="res://assets/images/Снимок экрана 2026-08-25 183940-Photoroom.png" id="15_sqyn4"]
+[ext_resource type="Texture2D" uid="uid://cpmp22uqjdk66" path="res://assets/images/Снимок экрана 2026-08-25 184222-Photoroom.png" id="16_f4qvh"]
+[ext_resource type="Texture2D" uid="uid://bi6wp34515c8x" path="res://assets/images/Снимок экрана 2026-08-25 184531-Photoroom.png" id="17_f4qvh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
 
@@ -13,12 +27,101 @@ size = Vector2(90.96745, 261.02365)
 size = Vector2(3868, 186.3548)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
-size = Vector2(335.64172, 191.54623)
+size = Vector2(164.86594, 191.54623)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrp6w"]
+size = Vector2(1072.7639, 84.7153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n34aw"]
-size = Vector2(237.96301, 141.62012)
+size = Vector2(64.14608, 97.97487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d45qh"]
+size = Vector2(8.686058, 61.607037)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbtxa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n34aw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jrp6w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d45qh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g384c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_m64i8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rmjgw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j3ygf"]
 
 [node name="БудкаОхраны" type="Node2D" unique_id=1092935491]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=290572703]
+
+[node name="СнимокЭкрана20260823144101" type="Sprite2D" parent="Node2D" unique_id=796776651]
+position = Vector2(-904, 2631)
+texture = ExtResource("5_i84a3")
+
+[node name="СнимокЭкрана20260825125801" type="Sprite2D" parent="Node2D" unique_id=638794265]
+z_index = 1
+position = Vector2(-8431, 1166)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125802" type="Sprite2D" parent="Node2D" unique_id=1925542604]
+z_index = 1
+position = Vector2(-8431, 620)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125803" type="Sprite2D" parent="Node2D" unique_id=1478453012]
+z_index = 1
+position = Vector2(-8430, 66)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125804" type="Sprite2D" parent="Node2D" unique_id=1948038305]
+z_index = 1
+position = Vector2(-8430, -487)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125807" type="Sprite2D" parent="Node2D" unique_id=867442676]
+z_index = 1
+position = Vector2(-4963, 1161.5)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125808" type="Sprite2D" parent="Node2D" unique_id=300249621]
+z_index = 1
+position = Vector2(-4953, 605.5)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125809" type="Sprite2D" parent="Node2D" unique_id=1251271554]
+z_index = 1
+position = Vector2(-4949, 58.5)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125810" type="Sprite2D" parent="Node2D" unique_id=1610856062]
+z_index = 1
+position = Vector2(-4946, -475.5)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125811" type="Sprite2D" parent="Node2D" unique_id=629925143]
+position = Vector2(533, 1358)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125812" type="Sprite2D" parent="Node2D" unique_id=308585833]
+position = Vector2(533, -1134)
+scale = Vector2(0.9993382, 1)
+texture = ExtResource("6_wae84")
+
+[node name="СнимокЭкрана20260825125836" type="Sprite2D" parent="Node2D" unique_id=42756569]
+position = Vector2(-2260, 2187)
+texture = ExtResource("7_ncnac")
+
+[node name="СнимокЭкрана20260825130118" type="Sprite2D" parent="Node2D" unique_id=714390545]
+z_index = 1
+position = Vector2(-127, 233)
+scale = Vector2(4, 4)
+texture = ExtResource("8_vqmx0")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=262952041]
 position = Vector2(22444, -5303)
@@ -26,7 +129,8 @@ scale = Vector2(8523.5, 2266.5)
 mesh = SubResource("BoxMesh_qgm6r")
 
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_0f17b")]
-position = Vector2(-3264, 466)
+z_index = 2
+position = Vector2(-6446, -785)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=232853918]
 scale = Vector2(1, 6.8400006)
@@ -37,25 +141,124 @@ scale = Vector2(46.720005, 2.22807)
 shape = SubResource("RectangleShape2D_mbtxa")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=280624100]
-position = Vector2(2218, -46.345024)
+position = Vector2(-3274, -73.1725)
 scale = Vector2(1, 2.9999998)
 shape = SubResource("RectangleShape2D_x2soh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545086285]
-position = Vector2(-4112.5, 404.60526)
+position = Vector2(-8317, 404.60535)
 scale = Vector2(49.24, 2.023392)
 shape = SubResource("RectangleShape2D_qgm6r")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=294865386]
+position = Vector2(-6708, 179.51743)
+rotation = 3.1415927
+scale = Vector2(0.7798319, -1.0040485)
+shape = SubResource("RectangleShape2D_jrp6w")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=432924909]
-position = Vector2(-384, 286)
+z_index = 1
+position = Vector2(-5873, 277.5)
 script = ExtResource("2_huq6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=809121119]
-position = Vector2(-833.5, 122)
+position = Vector2(358.7505, 479.5)
 scale = Vector2(9.72, 14.319999)
 shape = SubResource("RectangleShape2D_n34aw")
 
 [node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=1305869176]
-position = Vector2(-1736, 867.99994)
-scale = Vector2(0.3444588, 0.450618)
+position = Vector2(58.000004, -1206.9999)
+scale = Vector2(0.31913045, 0.4828283)
 texture = ExtResource("3_huq6g")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1846094971]
+z_index = 1
+position = Vector2(-6721, 159)
+script = ExtResource("4_hsrjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1283525917]
+position = Vector2(-118.999985, 611)
+scale = Vector2(54.91556, 7.564071)
+shape = SubResource("RectangleShape2D_d45qh")
+
+[node name="СнимокЭкрана20260825130600" type="Sprite2D" parent="." unique_id=434509170]
+position = Vector2(-3141.0005, 2796)
+scale = Vector2(2.0322325, 0.56386846)
+texture = ExtResource("9_ncnac")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1825093021]
+z_index = 1
+position = Vector2(-6664, 2391)
+scale = Vector2(4119.3955, 1963.1483)
+mesh = SubResource("BoxMesh_x2soh")
+texture = ExtResource("10_awq4u")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." unique_id=132843928]
+z_index = 1
+position = Vector2(-7532.959, 1295.7418)
+scale = Vector2(69.37618, 229.28827)
+mesh = SubResource("BoxMesh_mbtxa")
+texture = ExtResource("10_jb47g")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="." unique_id=936113368]
+z_index = 1
+position = Vector2(-7400.959, 1296.742)
+scale = Vector2(-62.08984, 230.4296)
+mesh = SubResource("BoxMesh_n34aw")
+texture = ExtResource("10_jb47g")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="." unique_id=395613601]
+z_index = 1
+position = Vector2(-7467.959, 1158.7418)
+scale = Vector2(214.08249, 49.024986)
+mesh = SubResource("BoxMesh_jrp6w")
+texture = ExtResource("13_w2ktc")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="." unique_id=656191529]
+z_index = 1
+position = Vector2(-7093, 1259)
+scale = Vector2(147.75032, 383.12338)
+mesh = SubResource("BoxMesh_d45qh")
+texture = ExtResource("10_jb47g")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="." unique_id=586985096]
+z_index = 1
+position = Vector2(-6322, 1254.0001)
+scale = Vector2(-146.5353, 372.17786)
+mesh = SubResource("BoxMesh_g384c")
+texture = ExtResource("10_jb47g")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="." unique_id=399391208]
+z_index = 1
+position = Vector2(-6710, 1006)
+scale = Vector2(999.0834, 134.38399)
+mesh = SubResource("BoxMesh_m64i8")
+texture = ExtResource("10_vqmx0")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="." unique_id=1279850976]
+z_index = 1
+position = Vector2(-7531.959, 999.7419)
+scale = Vector2(85.44237, 265.4838)
+mesh = SubResource("BoxMesh_rmjgw")
+texture = ExtResource("13_w2ktc")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="." unique_id=660338921]
+position = Vector2(-6587.9995, 259.0001)
+scale = Vector2(3381.77, -2342.453)
+mesh = SubResource("BoxMesh_j3ygf")
+texture = ExtResource("13_awq4u")
+
+[node name="СнимокЭкрана20260825183940Photoroom" type="Sprite2D" parent="." unique_id=912924735]
+position = Vector2(-6934, 798)
+texture = ExtResource("15_sqyn4")
+
+[node name="СнимокЭкрана20260825184222Photoroom" type="Sprite2D" parent="." unique_id=30219560]
+position = Vector2(-5485.0005, 768)
+scale = Vector2(2.2747896, 2.446053)
+texture = ExtResource("16_f4qvh")
+
+[node name="СнимокЭкрана20260825184531Photoroom" type="Sprite2D" parent="." unique_id=2094550385]
+position = Vector2(-6669.0005, 1278.0001)
+rotation = 0.07079998
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_f4qvh")

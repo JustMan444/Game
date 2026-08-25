@@ -66,7 +66,7 @@ func _ensure_initialized():
 	
 	_initialized = true
 
-func show_text(text: String, speed: float = 0.04, duration: float = 2.0):
+func show_text_and_bred(text: String, speed: float = 0.04, duration: float = 2.0):
 	if not _initialized:
 		await _ensure_initialized()
 	if is_showing:
@@ -95,12 +95,55 @@ func show_text(text: String, speed: float = 0.04, duration: float = 2.0):
 	bg.hide()
 	is_showing = false
 
+func show_text(text: String, speed: float = 0.04, duration: float = 2.0):
+	if not _initialized:
+		await _ensure_initialized()
+	
+	# Мгновенно рубим все старые процессы печати и таймеры
+	stop()
+	
+	is_showing = true
+	
+	# Сразу закидываем ЦЕЛЫЙ текст в память лейбла (скрывая все буквы)
+	label.text = text
+	label.visible_characters = 0 
+	bg.modulate.a = 0.0
+	bg.show()
+	
+	# === ВЕСЬ ПРОЦЕСС В ОДНОМ ТВИНЕ (Асинхронная цепочка) ===
+	tween = create_tween()
+	
+	# 1. Плавно проявляем черную полосу за 0.2 сек
+	tween.tween_property(bg, "modulate:a", 1.0, 0.2)
+	
+	# 2. Анимируем появление букв (от 0 до полной длины строки)
+	# Время анимации = количество букв * скорость
+	var typing_duration = text.length() * speed
+	tween.tween_property(label, "visible_characters", text.length(), typing_duration)
+	
+	# 3. Делаем паузу (время удержания текста на экране)
+	tween.tween_interval(duration)
+	
+	# 4. Плавно скрываем черную полосу обратно в прозрачность за 0.2 сек
+	tween.tween_property(bg, "modulate:a", 0.0, 0.2)
+	
+	# 5. Когда вся цепочка твина завершилась — убираем видимость и сбрасываем флаг
+	tween.tween_callback(func():
+		bg.hide()
+		label.text = ""
+		is_showing = false
+	)
+
 func stop():
+	# Твины в Godot 4 убивают ВСЮ цепочку (и анимацию, и паузы, и колбэки)
 	if tween and tween.is_valid():
 		tween.kill()
+		tween = null
+	
 	if bg:
 		bg.modulate.a = 0.0
 		bg.hide()
 	if label:
 		label.text = ""
+		label.visible_characters = -1 # -1 означает показывать все буквы по дефолту
 	is_showing = false
