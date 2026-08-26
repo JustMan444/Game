@@ -4,7 +4,7 @@ shader_type canvas_item;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 // Сила обесцвечивания (0.0 — оригинальные цвета игры, 1.0 — полный ч/б нуар)
-uniform float desaturation_level : hint_range(0.0, 2.0) = 0.4;
+uniform float desaturation_level : hint_range(0.0, 2.0) = 1.0;
 
 // Сила безумия (0.0 — нуар, 1.0 — полный психодел и красный цвет)
 uniform float insanity_level : hint_range(0.0, 2.0) = 0.0;

@@ -17,8 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dnddivyj7eg5i" path="res://assets/images/Снимок экрана 2026-08-25 183940-Photoroom.png" id="15_sqyn4"]
 [ext_resource type="Texture2D" uid="uid://cpmp22uqjdk66" path="res://assets/images/Снимок экрана 2026-08-25 184222-Photoroom.png" id="16_f4qvh"]
 [ext_resource type="Texture2D" uid="uid://bi6wp34515c8x" path="res://assets/images/Снимок экрана 2026-08-25 184531-Photoroom.png" id="17_f4qvh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+[ext_resource type="AudioStream" uid="uid://dntbf66e0q3r6" path="res://assets/audio/sounds-of-wooden-doors-assembly (mp3cut.net).mp3" id="18_saxed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbtxa"]
 size = Vector2(90.96745, 261.02365)
@@ -32,11 +31,13 @@ size = Vector2(164.86594, 191.54623)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrp6w"]
 size = Vector2(1072.7639, 84.7153)
 
+[sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n34aw"]
-size = Vector2(64.14608, 97.97487)
+size = Vector2(579.9999, 1326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d45qh"]
-size = Vector2(8.686058, 61.607037)
+size = Vector2(4.406764, 37.67812)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
 
@@ -58,10 +59,48 @@ size = Vector2(8.686058, 61.607037)
 
 [node name="БудкаОхраны" type="Node2D" unique_id=1092935491]
 
+[node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=1305869176]
+position = Vector2(-28194.457, -2833.5)
+scale = Vector2(0.31913045, 0.4828283)
+texture = ExtResource("3_huq6g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=232853918]
+scale = Vector2(1, 6.8400006)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1893814697]
+position = Vector2(-10322, -33.625694)
+scale = Vector2(46.720005, 2.22807)
+shape = SubResource("RectangleShape2D_mbtxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=280624100]
+position = Vector2(-3274, -73.1725)
+scale = Vector2(1, 2.9999998)
+shape = SubResource("RectangleShape2D_x2soh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545086285]
+position = Vector2(-8317, 404.60535)
+scale = Vector2(49.24, 2.023392)
+shape = SubResource("RectangleShape2D_qgm6r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=294865386]
+position = Vector2(-6708, 179.51743)
+rotation = 3.1415927
+scale = Vector2(0.7798319, -1.0040485)
+shape = SubResource("RectangleShape2D_jrp6w")
+
+[node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_0f17b")]
+z_index = 2
+position = Vector2(-7698, 955)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=262952041]
+position = Vector2(22444, -5303)
+scale = Vector2(8523.5, 2266.5)
+mesh = SubResource("BoxMesh_qgm6r")
+
 [node name="Node2D" type="Node2D" parent="." unique_id=290572703]
 
 [node name="СнимокЭкрана20260823144101" type="Sprite2D" parent="Node2D" unique_id=796776651]
-position = Vector2(-904, 2631)
+position = Vector2(-17512.72, -5406.5)
 texture = ExtResource("5_i84a3")
 
 [node name="СнимокЭкрана20260825125801" type="Sprite2D" parent="Node2D" unique_id=638794265]
@@ -105,84 +144,47 @@ position = Vector2(-4946, -475.5)
 texture = ExtResource("6_wae84")
 
 [node name="СнимокЭкрана20260825125811" type="Sprite2D" parent="Node2D" unique_id=629925143]
-position = Vector2(533, 1358)
+position = Vector2(-17795, -3335)
 texture = ExtResource("6_wae84")
 
 [node name="СнимокЭкрана20260825125812" type="Sprite2D" parent="Node2D" unique_id=308585833]
-position = Vector2(533, -1134)
+position = Vector2(-27719.457, -2760.5)
 scale = Vector2(0.9993382, 1)
 texture = ExtResource("6_wae84")
 
 [node name="СнимокЭкрана20260825125836" type="Sprite2D" parent="Node2D" unique_id=42756569]
-position = Vector2(-2260, 2187)
+position = Vector2(-18868.72, -5850.5)
 texture = ExtResource("7_ncnac")
 
 [node name="СнимокЭкрана20260825130118" type="Sprite2D" parent="Node2D" unique_id=714390545]
 z_index = 1
-position = Vector2(-127, 233)
+position = Vector2(-18058, -5380)
 scale = Vector2(4, 4)
 texture = ExtResource("8_vqmx0")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=262952041]
-position = Vector2(22444, -5303)
-scale = Vector2(8523.5, 2266.5)
-mesh = SubResource("BoxMesh_qgm6r")
-
-[node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_0f17b")]
-z_index = 2
-position = Vector2(-6446, -785)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=232853918]
-scale = Vector2(1, 6.8400006)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1893814697]
-position = Vector2(-10322, -33.625694)
-scale = Vector2(46.720005, 2.22807)
-shape = SubResource("RectangleShape2D_mbtxa")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=280624100]
-position = Vector2(-3274, -73.1725)
-scale = Vector2(1, 2.9999998)
-shape = SubResource("RectangleShape2D_x2soh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545086285]
-position = Vector2(-8317, 404.60535)
-scale = Vector2(49.24, 2.023392)
-shape = SubResource("RectangleShape2D_qgm6r")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=294865386]
-position = Vector2(-6708, 179.51743)
-rotation = 3.1415927
-scale = Vector2(0.7798319, -1.0040485)
-shape = SubResource("RectangleShape2D_jrp6w")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=432924909]
+[node name="Area2D" type="Area2D" parent="." unique_id=432924909 node_paths=PackedStringArray("sound_player")]
 z_index = 1
-position = Vector2(-5873, 277.5)
+position = Vector2(-5865, 180)
+priority = 1
 script = ExtResource("2_huq6g")
+sound_player = NodePath("../AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=809121119]
-position = Vector2(358.7505, 479.5)
-scale = Vector2(9.72, 14.319999)
+position = Vector2(364, 520)
 shape = SubResource("RectangleShape2D_n34aw")
-
-[node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=1305869176]
-position = Vector2(58.000004, -1206.9999)
-scale = Vector2(0.31913045, 0.4828283)
-texture = ExtResource("3_huq6g")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1846094971]
 z_index = 1
-position = Vector2(-6721, 159)
+position = Vector2(-6580, 94)
 script = ExtResource("4_hsrjk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1283525917]
-position = Vector2(-118.999985, 611)
+position = Vector2(-495, 685.99994)
 scale = Vector2(54.91556, 7.564071)
 shape = SubResource("RectangleShape2D_d45qh")
 
 [node name="СнимокЭкрана20260825130600" type="Sprite2D" parent="." unique_id=434509170]
-position = Vector2(-3141.0005, 2796)
+position = Vector2(-19749.72, -5241.5)
 scale = Vector2(2.0322325, 0.56386846)
 texture = ExtResource("9_ncnac")
 
@@ -262,3 +264,7 @@ position = Vector2(-6669.0005, 1278.0001)
 rotation = 0.07079998
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_f4qvh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1106727839]
+stream = ExtResource("18_saxed")
+volume_db = 24.0

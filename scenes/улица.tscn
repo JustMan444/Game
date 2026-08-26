@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cbuqd4mgo5oup"]
+
+[ext_resource type="PackedScene" uid="uid://d1vhq8sfeplqb" path="res://scenes/objects/player_2d.tscn" id="1_ilte3"]
+[ext_resource type="Script" uid="uid://dctr7v5lhmuw5" path="res://scripts/улица.gd" id="1_wlvbu"]
+[ext_resource type="Texture2D" uid="uid://cpmp22uqjdk66" path="res://assets/images/Снимок экрана 2026-08-25 184222-Photoroom.png" id="2_i1x13"]
+[ext_resource type="Script" uid="uid://bayp6xjwyhl0v" path="res://Go_to.gd" id="3_ga7hk"]
+[ext_resource type="Script" uid="uid://cxt218nkxw1fe" path="res://Bomz.gd" id="4_jcidx"]
+[ext_resource type="Texture2D" uid="uid://b0g1n57c13gd5" path="res://assets/images/Стена.png" id="5_cbdej"]
+[ext_resource type="Texture2D" uid="uid://bsdmusas6gl6l" path="res://assets/images/Снимок экрана 2026-08-26 130019-Photoroom.png" id="5_i1x13"]
+[ext_resource type="Script" uid="uid://bpctnjrvn077q" path="res://scenes/strange.gd" id="6_ga7hk"]
+[ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="7_jcidx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrp6w"]
+size = Vector2(18044, 672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgm6r"]
+size = Vector2(56289, 10353)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2soh"]
+size = Vector2(31.255615, 159.89359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbtxa"]
+size = Vector2(870, 1883)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n34aw"]
+size = Vector2(470.5, 15.550373)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbtxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d45qh"]
+size = Vector2(993, 852)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g384c"]
+size = Vector2(1016, 741)
+
+[node name="Улица" type="Node2D" unique_id=435495839]
+script = ExtResource("1_wlvbu")
+
+[node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_ilte3")]
+position = Vector2(706, -1288)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=35323100]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1887265189]
+position = Vector2(17704, -329)
+shape = SubResource("RectangleShape2D_jrp6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1995750332]
+position = Vector2(27256.5, 5166.5)
+shape = SubResource("RectangleShape2D_qgm6r")
+
+[node name="СнимокЭкрана20260825184222Photoroom" type="Sprite2D" parent="StaticBody2D" unique_id=811291617]
+position = Vector2(-450, -952)
+scale = Vector2(3.3202047, 3.1633396)
+texture = ExtResource("2_i1x13")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1549846610]
+position = Vector2(-1080.7773, 1063)
+scale = Vector2(12.655479, 49.945717)
+shape = SubResource("RectangleShape2D_x2soh")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=1297770667]
+position = Vector2(-450, -1037)
+script = ExtResource("3_ga7hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=888084747]
+position = Vector2(2, 83.5)
+shape = SubResource("RectangleShape2D_mbtxa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1299766479]
+position = Vector2(8452.75, -172.3)
+scale = Vector2(1, 21.44)
+shape = SubResource("RectangleShape2D_n34aw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1998213058]
+position = Vector2(653, 1382.0001)
+scale = Vector2(230360.81, -2749.3164)
+mesh = SubResource("BoxMesh_qgm6r")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="StaticBody2D" unique_id=1105018514]
+position = Vector2(27987, 42.000004)
+scale = Vector2(38598.24, 1408.2432)
+mesh = SubResource("BoxMesh_x2soh")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="StaticBody2D" unique_id=1486789436]
+position = Vector2(8466.001, -167)
+scale = Vector2(684.48926, 346.61072)
+mesh = SubResource("BoxMesh_mbtxa")
+
+[node name="Стена" type="Sprite2D" parent="StaticBody2D" unique_id=2091879784]
+position = Vector2(-1106, -275)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена2" type="Sprite2D" parent="StaticBody2D" unique_id=1203018749]
+position = Vector2(-1101, -840)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена3" type="Sprite2D" parent="StaticBody2D" unique_id=555599157]
+position = Vector2(-1115, -1396)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена4" type="Sprite2D" parent="StaticBody2D" unique_id=300822941]
+position = Vector2(-1109, -1952)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена5" type="Sprite2D" parent="StaticBody2D" unique_id=191294120]
+position = Vector2(-1107, -2508)
+texture = ExtResource("5_cbdej")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1925187973]
+position = Vector2(15486, -861)
+script = ExtResource("4_jcidx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1099569490]
+position = Vector2(155.5, -232)
+shape = SubResource("RectangleShape2D_d45qh")
+
+[node name="СнимокЭкрана20260826130019Photoroom" type="Sprite2D" parent="." unique_id=2125945073]
+position = Vector2(15644, -1104)
+texture = ExtResource("5_i1x13")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1795006763]
+position = Vector2(24871, -1301)
+script = ExtResource("6_ga7hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=735223186]
+position = Vector2(495, 260.5)
+shape = SubResource("RectangleShape2D_g384c")
+
+[node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=918748467]
+position = Vector2(25330, -1066)
+texture = ExtResource("7_jcidx")

@@ -53,19 +53,68 @@ func _initialize_filter():
 # --- УПРАВЛЕНИЕ ЭФФЕКТАМИ ИЗ ЛЮБОГО СКРИПТА ---
 
 # Плавно изменить уровень серости (1.0 — полный чб, 0.0 — цветная игра)
-func fade_desaturation(target_value: float, duration: float = 1.0):
+func fade_desaturation_a(target_value: float, duration: float = 1.0):
 	if not shader_rect or not shader_rect.material: return
 	var tween = create_tween()
 	tween.tween_property(shader_rect.material, "shader_parameter/desaturation_level", target_value, duration)
 
 # Плавно включить/выключить красное безумие (1.0 — кровавый экран, 0.0 — обычный чб)
-func fade_insanity(target_value: float, duration: float = 1.0):
+func fade_insanity_a(target_value: float, duration: float = 1.0):
 	if not shader_rect or not shader_rect.material: return
 	var tween = create_tween()
 	tween.tween_property(shader_rect.material, "shader_parameter/insanity_level", target_value, duration)
 
 # Плавно изменить силу шума плёнки
-func fade_grain(target_value: float, duration: float = 1.0):
+func fade_grain_a(target_value: float, duration: float = 1.0):
 	if not shader_rect or not shader_rect.material: return
 	var tween = create_tween()
 	tween.tween_property(shader_rect.material, "shader_parameter/grain_amount", target_value, duration)
+# Плавно изменить уровень серости
+# Плавно изменить уровень серости
+# Плавно изменить уровень серости
+func fade_desaturation(target_value: float, duration: float = 1.0):
+	if not shader_rect or not shader_rect.material: return
+	var mat = shader_rect.material
+	var current_val = mat.get_shader_parameter("desaturation_level")
+	
+	# ЗАЩИТА ОТ NIL: если значение пустое, принудительно ставим дефолт 1.0 (полный чб)
+	if current_val == null:
+		current_val = 1.0
+	
+	var tween = create_tween()
+	tween.tween_method(
+		func(val): mat.set_shader_parameter("desaturation_level", val),
+		current_val, target_value, duration
+	)
+
+# Плавно включить/выключить красное безумие
+func fade_insanity(target_value: float, duration: float = 1.0):
+	if not shader_rect or not shader_rect.material: return
+	var mat = shader_rect.material
+	var current_val = mat.get_shader_parameter("insanity_level")
+	
+	# ЗАЩИТА ОТ NIL: если значение пустое, ставим стартовый ноль
+	if current_val == null:
+		current_val = 0.0
+	
+	var tween = create_tween()
+	tween.tween_method(
+		func(val): mat.set_shader_parameter("insanity_level", val),
+		current_val, target_value, duration
+	)
+
+# Плавно изменить силу шума плёнки
+func fade_grain(target_value: float, duration: float = 1.0):
+	if not shader_rect or not shader_rect.material: return
+	var mat = shader_rect.material
+	var current_val = mat.get_shader_parameter("grain_amount")
+	
+	# ЗАЩИТА ОТ NIL: если значение пустое, ставим базовый шум 0.05
+	if current_val == null:
+		current_val = 0.05
+	
+	var tween = create_tween()
+	tween.tween_method(
+		func(val): mat.set_shader_parameter("grain_amount", val),
+		current_val, target_value, duration
+	)

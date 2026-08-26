@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://yromx0klvgdw"]
+
+[ext_resource type="PackedScene" uid="uid://bxbuavgum3vy1" path="res://scenes/objects/player.tscn" id="1_g6v7b"]
+[ext_resource type="Script" uid="uid://b3yi0550rbtbs" path="res://obasralsya.gd" id="2_hs7dx"]
+[ext_resource type="Script" uid="uid://bc3nsmctrau82" path="res://Go_Home_walter.gd" id="3_c761e"]
+[ext_resource type="AudioStream" uid="uid://0nk72j3waje2" path="res://assets/audio/d47b6a43e277723.mp3" id="4_5tblr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgm6r"]
+size = Vector3(2.6586914, 1, 211.87735)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgm6r"]
+size = Vector3(0.9824524, 1, 20.49115)
+
+[sub_resource type="Environment" id="Environment_qgm6r"]
+fog_light_color = Color(1, 0.10980392, 0, 1)
+fog_density = 0.025
+volumetric_fog_density = 0.15
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2soh"]
+size = Vector3(1, 5.08313, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2soh"]
+size = Vector3(12.363586, 7.213501, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mbtxa"]
+size = Vector3(13.949219, 13.422577, 74.39435)
+
+[node name="Node3D" type="Node3D" unique_id=704790000]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2007659571]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=740112988]
+transform = Transform3D(4.5413413, 0, 0, 0, 1.2132617, 0, 0, 0, 1.2132617, 0, 0, 0)
+shape = SubResource("BoxShape3D_qgm6r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=184272913]
+transform = Transform3D(12.694207, 0, 0, 0, 1, 0, 0, 0, 8.209584, -0.3209579, 0, 30.941523)
+mesh = SubResource("BoxMesh_qgm6r")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1172694859]
+environment = SubResource("Environment_qgm6r")
+
+[node name="Player3D" parent="." unique_id=2133441062 instance=ExtResource("1_g6v7b")]
+transform = Transform3D(-0.0060696667, 0, 0.9999816, 0, 1, 0, -0.9999816, 0, -0.0060696667, -0.8863163, 1.7507362, 108.56971)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2126721777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7221642, 84.97922)
+script = ExtResource("2_hs7dx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D" unique_id=1592102747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31681418, -84.405304)
+mesh = SubResource("BoxMesh_x2soh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=35340880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13217163, 0.9314575, 0)
+shape = SubResource("BoxShape3D_x2soh")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1358084825 node_paths=PackedStringArray("sound_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9406662, -4.4559746)
+script = ExtResource("3_c761e")
+sound_player = NodePath("../ScreamerSound")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1934352059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072265625, 3.5261688, -64.57909)
+shape = SubResource("BoxShape3D_mbtxa")
+
+[node name="ScreamerSound" type="AudioStreamPlayer3D" parent="." unique_id=1976981926]
+stream = ExtResource("4_5tblr")
+volume_db = 80.0
+max_distance = 77.9

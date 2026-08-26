@@ -6,7 +6,7 @@ var label: Label = null
 var is_showing: bool = false
 var tween: Tween = null
 var _initialized: bool = false
-
+signal text_finished
 func _ensure_initialized():
 	if _initialized:
 		return
@@ -132,7 +132,9 @@ func show_text(text: String, speed: float = 0.04, duration: float = 2.0):
 		bg.hide()
 		label.text = ""
 		is_showing = false
+		text_finished.emit()
 	)
+	
 
 func stop():
 	# Твины в Godot 4 убивают ВСЮ цепочку (и анимацию, и паузы, и колбэки)

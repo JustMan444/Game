@@ -7,7 +7,7 @@
 size = Vector2(734, 735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2soh"]
-size = Vector2(1005.99976, 496.20868)
+size = Vector2(781.87616, 339.45795)
 
 [node name="Player2D" type="CharacterBody2D" unique_id=186757084]
 script = ExtResource("1_itixg")
@@ -35,7 +35,7 @@ offset_bottom = 23.0
 [node name="InteractZone" type="Area2D" parent="." unique_id=807435267]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1492504923]
-position = Vector2(48.499985, -33)
+position = Vector2(3.5000153, -4.5)
 scale = Vector2(2.3469188, 2.966494)
 shape = SubResource("RectangleShape2D_x2soh")
 
