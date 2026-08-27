@@ -10,7 +10,7 @@ uniform float desaturation_level : hint_range(0.0, 2.0) = 1.0;
 uniform float insanity_level : hint_range(0.0, 2.0) = 0.0;
 
 // Сила зернистости
-uniform float grain_amount : hint_range(0.0, 2.0) = 0.3;
+uniform float grain_amount : hint_range(0.0, 2.0) = 0.0;
 
 // Простейший генератор случайного шума
 float noise(vec2 co) {

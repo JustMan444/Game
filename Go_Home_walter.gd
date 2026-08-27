@@ -17,4 +17,4 @@ func _on_body_entered(body: Node):
 		if sound_player:
 			sound_player.play()
 			print("Lol kek cheburek")
-		GameManager.switch_to_scene("res://scenes/level.tscn",Color.DARK_RED, 0.00001)	
+		GameManager.switch_to_scene("res://scenes/улица.tscn",Color.DARK_RED, 0.00001)	

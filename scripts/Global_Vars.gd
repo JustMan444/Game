@@ -12,6 +12,10 @@ var isNeed = true
 var helped_homeless = false
 # Хранилище позиции игрока на улице
 var player_street_position: Vector2 = Vector2.ZERO
+var teleport_count: int = 0
+var bug_portal_used: bool = false # Был ли уже использован портал безумия
+var bug_portal_used1: bool = false 
+var why: bool = false 
 
 	
 	

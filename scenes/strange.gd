@@ -10,8 +10,9 @@ func _ready():
 
 func _on_body_entered(body: Node):
 	# Защита: срабатывает только если вошел ИГРОК и триггер еще не был нажат
-	if body.name == "Player2D" and not triggered:
+	if body.name == "Player2D" and not GlobalVars.bug_portal_used:
 		triggered = true
+		GlobalVars.bug_portal_used = true
 		ShaderManager.fade_insanity(0.5, 1.0)
 		ShaderManager.fade_desaturation(2,4)
 		GlobalVars.player_street_position = body.global_position
