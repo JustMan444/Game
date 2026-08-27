@@ -53,3 +53,45 @@ func _play_random_track():
 		print("Музыкальный менеджер: Сейчас играет: ", random_track_path)
 	else:
 		print("Музыкальный менеджер: Не удалось загрузить трек по пути: ", random_track_path)
+func play_special_song(audio_path: String):
+	# 1. Загружаем новый аудиофайл из папки проекта
+	var new_track = load(audio_path)
+	if not new_track:
+		print("МУЗЫКА: Не удалось найти файл по пути: ", audio_path)
+		return
+		
+	# 2. Создаем Твин для ПЛАВНОГО затухания старой песни за 1.5 секунды
+	var tween = create_tween()
+	# Узел AudioStreamPlayer внутри менеджера (замени имя '$MusicPlayer', если у тебя другое)
+	var player = $MusicPlayer 
+	
+	# Глушим громкость (volume_db) старого трека в полнейшую тишину (-40 децибел)
+	tween.tween_property(player, "volume_db", -40.0, 1.5)
+	await tween.finished
+	
+	# 3. Переключаем трек и возвращаем громкость на нормальный уровень (0 децибел)
+	player.stop()
+	player.stream = new_track
+	player.volume_db = 0.0 # Возвращаем стандартную громкость
+	player.play()
+	print("МУЗЫКА: Успешно включили специальный финальный трек!")
+		
+func stop_everything():
+	print("МЕНЕДЖЕР МУЗЫКИ: Экстренное глушение Кевина Маклеода...")
+	
+	# 1. Проверяем, есть ли в самом скрипте переменная-плеер (например, var player или var audio)
+	for property in get_property_list():
+		var prop_name = property["name"]
+		# Ищем любые переменные, внутри которых может лежать звуковой объект
+		if prop_name in ["player", "audio", "music_player", "stream_player", "audio_player"]:
+			var obj = get(prop_name)
+			if obj and obj.has_method("stop"):
+				obj.stop()
+				print("МЕНЕДЖЕР МУЗЫКИ: Намертво заглушили переменную: ", prop_name)
+	
+	# 2. На всякий случай жестко гасим все дочерние AudioStreamPlayer, если они там есть
+	for child in get_children():
+		if child.has_method("stop"):
+			child.stop()
+			
+	print("МЕНЕДЖЕР МУЗЫКИ: Кевин Маклеод официально ушёл со смены!")

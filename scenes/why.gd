@@ -39,8 +39,8 @@ func _start_scene(player: Node2D):
 	#await Subtitle.text_finished
 	#Subtitle.show_text("Yeah, of course.")
 	#await Subtitle.text_finished
-	Subtitle.show_text("(This is strange... how does he know that I'm heading home? But whatever.)")
-	await Subtitle.text_finished 
+	#Subtitle.show_text("(This is strange... how does he know that I'm heading home? But whatever.)")
+	#await Subtitle.text_finished 
 	
 	player.set_physics_process(true)
 	

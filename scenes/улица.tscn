@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cs3j3ymg2u4ov" path="res://assets/images/Снимок экрана 2026-08-27 195032.png" id="12_gafxv"]
 [ext_resource type="Script" uid="uid://tiv3s50pydna" path="res://scenes/hsghsh.gd" id="13_gafxv"]
 [ext_resource type="Script" uid="uid://ew3qeq6gd5jq" path="res://scenes/final.gd" id="14_dy75b"]
+[ext_resource type="Script" uid="uid://cadumqr3m1iun" path="res://scenes/finaling.gd" id="15_17nlo"]
+[ext_resource type="Texture2D" uid="uid://cxo5gfxifs8fb" path="res://assets/images/изображение-Photoroom.png" id="16_qom4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrp6w"]
 size = Vector2(38736, 672)
@@ -56,11 +58,14 @@ size = Vector2(227, 215)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rffm0"]
 size = Vector2(200, 146)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cltnt"]
+size = Vector2(461, 1010)
+
 [node name="Улица" type="Node2D" unique_id=435495839]
 script = ExtResource("1_wlvbu")
 
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_ilte3")]
-position = Vector2(34112, -1605)
+position = Vector2(38940, -2256)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=35323100]
 
@@ -188,3 +193,103 @@ script = ExtResource("14_dy75b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1424595799]
 position = Vector2(38948, -734)
 shape = SubResource("RectangleShape2D_rffm0")
+
+[node name="Area2D7" type="Area2D" parent="." unique_id=1648248072]
+script = ExtResource("15_17nlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=206424895]
+position = Vector2(39715.5, -1170)
+shape = SubResource("RectangleShape2D_cltnt")
+
+[node name="ИзображениеPhotoroom" type="Sprite2D" parent="Area2D7" unique_id=2134369432]
+position = Vector2(39717.004, -1171)
+scale = Vector2(1.16, 1.24)
+texture = ExtResource("16_qom4n")
+
+[node name="Стена" type="Sprite2D" parent="." unique_id=2129540342]
+position = Vector2(40178, -944)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена2" type="Sprite2D" parent="." unique_id=1457369293]
+position = Vector2(40178, -1499)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена3" type="Sprite2D" parent="." unique_id=1509971453]
+position = Vector2(40635, -946)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена4" type="Sprite2D" parent="." unique_id=737438728]
+position = Vector2(40642, -1503)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена5" type="Sprite2D" parent="." unique_id=1010611594]
+position = Vector2(41101, -964)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена6" type="Sprite2D" parent="." unique_id=1039835683]
+position = Vector2(40173, -2058)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена7" type="Sprite2D" parent="." unique_id=1835414696]
+position = Vector2(40635, -2055)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена8" type="Sprite2D" parent="." unique_id=1723283594]
+position = Vector2(41095.5, -1526)
+scale = Vector2(1.1127659, 1)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена9" type="Sprite2D" parent="." unique_id=1123319045]
+position = Vector2(41096, -2062)
+scale = Vector2(1.0808511, 1)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена10" type="Sprite2D" parent="." unique_id=1934954995]
+position = Vector2(40166, -2600)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена11" type="Sprite2D" parent="." unique_id=964309805]
+position = Vector2(40641, -2600)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена12" type="Sprite2D" parent="." unique_id=380635310]
+position = Vector2(41111.5, -2614)
+scale = Vector2(1.0872338, 1)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена13" type="Sprite2D" parent="." unique_id=1376662230]
+position = Vector2(41564, -953)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена14" type="Sprite2D" parent="." unique_id=1862972897]
+position = Vector2(41586, -2627)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена15" type="Sprite2D" parent="." unique_id=771460648]
+position = Vector2(41115, -3149)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена16" type="Sprite2D" parent="." unique_id=1297546914]
+position = Vector2(41578, -2078)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена17" type="Sprite2D" parent="." unique_id=732053660]
+position = Vector2(40165, -3168)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена18" type="Sprite2D" parent="." unique_id=1476823421]
+position = Vector2(40631, -3152)
+scale = Vector2(1.0723404, 1)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена19" type="Sprite2D" parent="." unique_id=1933422725]
+position = Vector2(42049, -2628)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена20" type="Sprite2D" parent="." unique_id=1721569586]
+position = Vector2(41578, -3168)
+texture = ExtResource("5_cbdej")
+
+[node name="Стена21" type="Sprite2D" parent="." unique_id=1557541686]
+position = Vector2(42053, -3164)
+texture = ExtResource("5_cbdej")
