@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://8dtrnxb1kbqo" path="res://scenes/АВФПП.gd" id="10_cx6qu"]
 [ext_resource type="Script" uid="uid://bs5h3node0nbw" path="res://scenes/why.gd" id="11_ltfer"]
 [ext_resource type="Texture2D" uid="uid://cs3j3ymg2u4ov" path="res://assets/images/Снимок экрана 2026-08-27 195032.png" id="12_gafxv"]
+[ext_resource type="Script" uid="uid://tiv3s50pydna" path="res://scenes/hsghsh.gd" id="13_gafxv"]
+[ext_resource type="Script" uid="uid://ew3qeq6gd5jq" path="res://scenes/final.gd" id="14_dy75b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrp6w"]
 size = Vector2(38736, 672)
@@ -48,11 +50,17 @@ size = Vector2(508, 318)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n34aw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3ygf"]
+size = Vector2(227, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rffm0"]
+size = Vector2(200, 146)
+
 [node name="Улица" type="Node2D" unique_id=435495839]
 script = ExtResource("1_wlvbu")
 
 [node name="Player2D" parent="." unique_id=186757084 instance=ExtResource("1_ilte3")]
-position = Vector2(706, -1288)
+position = Vector2(34112, -1605)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=35323100]
 
@@ -165,3 +173,18 @@ position = Vector2(35482, -842)
 scale = Vector2(-370.50177, 359.5892)
 mesh = SubResource("BoxMesh_n34aw")
 texture = ExtResource("12_gafxv")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=1310241731]
+position = Vector2(37392, -776)
+script = ExtResource("13_gafxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1312483604]
+position = Vector2(103.5, 4.5)
+shape = SubResource("RectangleShape2D_j3ygf")
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=1802667246]
+script = ExtResource("14_dy75b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1424595799]
+position = Vector2(38948, -734)
+shape = SubResource("RectangleShape2D_rffm0")

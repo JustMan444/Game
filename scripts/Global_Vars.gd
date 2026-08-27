@@ -16,6 +16,8 @@ var teleport_count: int = 0
 var bug_portal_used: bool = false # Был ли уже использован портал безумия
 var bug_portal_used1: bool = false 
 var why: bool = false 
+var whyr: bool = false 
+var isFinal: bool = false
 
 	
 	

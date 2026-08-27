@@ -11,7 +11,7 @@ size = Vector2(781.87616, 339.45795)
 
 [node name="Player2D" type="CharacterBody2D" unique_id=186757084]
 script = ExtResource("1_itixg")
-speed = 4000.0
+speed = 600.0
 jump_velocity = -1000.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1531746195]
