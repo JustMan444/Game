@@ -3,21 +3,23 @@ extends Control
 @onready var credits_text = $ColorRect/CreditsText
 
 func _ready():
-	MusicManager.stop_everything()
-	var final_audio_player = AudioStreamPlayer.new()
-	add_child(final_audio_player)
-	
-	# ЗАМЕНИ ПУТЬ НИЖЕ: Вставь точное имя и путь к своей специальной песне!
-	final_audio_player.stream = load("res://assets/audio/Ray_Parker_-_Ghostbusters_OST_Okhotniki_za_privedeniyami_28528277.mp3") 
-	
-	if final_audio_player.stream:
-		final_audio_player.volume_db = 0.0 # Громкость на полную
-		final_audio_player.play()
-		print("ТИТРЫ: Финальный трек успешно запущен автономно прямо на сцене!")
-	else:
-		print("ТИТРЫ: Ошибка! Звуковой файл не найден по указанному пути.")
-		
-	# 1. ВКЛЮЧАЕМ АВТО-ВЫСОТУ: Заставляем ноду расти вниз без ограничений под твой длинный текст!
+	#MusicManager.stop_everything()
+	MusicManager.play_special_song("res://assets/audio/Ray_Parker_-_Ghostbusters_OST_Okhotniki_za_privedeniyami_28528277.mp3")
+	#MusicManager.stop_everything()
+	#var final_audio_player = AudioStreamPlayer.new()
+	#add_child(final_audio_player)
+	#
+	## ЗАМЕНИ ПУТЬ НИЖЕ: Вставь точное имя и путь к своей специальной песне!
+	#final_audio_player.stream = load("res://assets/audio/Ray_Parker_-_Ghostbusters_OST_Okhotniki_za_privedeniyami_28528277.mp3") 
+	#
+	#if final_audio_player.stream:
+		#final_audio_player.volume_db = 0.0 # Громкость на полную
+		#final_audio_player.play()
+		#print("ТИТРЫ: Финальный трек успешно запущен автономно прямо на сцене!")
+	#else:
+		#print("ТИТРЫ: Ошибка! Звуковой файл не найден по указанному пути.")
+		#
+	## 1. ВКЛЮЧАЕМ АВТО-ВЫСОТУ: Заставляем ноду расти вниз без ограничений под твой длинный текст!
 	if credits_text is Label:
 		credits_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	elif credits_text is RichTextLabel:
@@ -29,7 +31,7 @@ func _ready():
 	credits_text.grow_vertical = Control.GROW_DIRECTION_BOTH
 	
 	# Прячем текст в самый низ экрана перед стартом
-	credits_text.position.y = 1100.0
+	credits_text.position.y = get_viewport().get_visible_rect().size.y + 370
 	
 	# Твой легендарный список авторов буква в букву:
 	credits_text.text = """
@@ -65,6 +67,9 @@ func _ready():
 	
 	
 	--- Quotes from the crew ---
+	
+	"This game was amazingly fun to make" 
+	- (SeeSharp)
 	
 	"Thank you for playing! Have you unlocked all the endings? 🇷🇺" 
 	— (Just_Man444)

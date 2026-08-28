@@ -17,7 +17,7 @@ var bug_portal_used: bool = false # Был ли уже использован п
 var bug_portal_used1: bool = false 
 var why: bool = false 
 var whyr: bool = false 
-var isFinal: bool = false
+var isFinal: bool = true
 
 	
 	

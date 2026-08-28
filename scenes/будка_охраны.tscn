@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://de1p8gl7bk5fa"]
 
 [ext_resource type="PackedScene" uid="uid://d1vhq8sfeplqb" path="res://scenes/objects/player_2d.tscn" id="1_0f17b"]
+[ext_resource type="Script" uid="uid://drqhx2syssb1a" path="res://scenes/будка_охраны.gd" id="1_jupt5"]
 [ext_resource type="Script" uid="uid://7lswxl3s4rvy" path="res://scripts/Door/Door.gd" id="2_huq6g"]
 [ext_resource type="Texture2D" uid="uid://c0ylia515riqp" path="res://assets/images/Очень важная вещь!.png" id="3_huq6g"]
 [ext_resource type="Script" uid="uid://8pl02g7lai6v" path="res://scenes/Coffee.gd" id="4_hsrjk"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4swi8beu26xd" path="res://assets/images/Снимок экрана 2026-08-25 130600.png" id="9_ncnac"]
 [ext_resource type="Texture2D" uid="uid://bg83kc6ocuin4" path="res://assets/images/Снимок экрана 2026-08-25 183614.png" id="10_awq4u"]
 [ext_resource type="Texture2D" uid="uid://b3e61g528evv4" path="res://assets/images/Снимок экрана 2026-08-25 182142.png" id="10_jb47g"]
+[ext_resource type="Texture2D" uid="uid://vsop33rjvgqa" path="res://assets/images/изображение-Photoroom(1).png" id="10_vejmf"]
 [ext_resource type="Texture2D" uid="uid://dr7f1vtgwqilr" path="res://assets/images/Снимок экрана 2026-08-25 181811.png" id="10_vqmx0"]
 [ext_resource type="Texture2D" uid="uid://cf3et8dvgj3rc" path="res://assets/images/Снимок экрана 2026-08-25 183521.png" id="13_awq4u"]
 [ext_resource type="Texture2D" uid="uid://dyx3oqsrpk3xf" path="res://assets/images/Снимок экрана 2026-08-25 182426.png" id="13_w2ktc"]
@@ -58,6 +60,7 @@ size = Vector2(4.406764, 37.67812)
 [sub_resource type="BoxMesh" id="BoxMesh_j3ygf"]
 
 [node name="БудкаОхраны" type="Node2D" unique_id=1092935491]
+script = ExtResource("1_jupt5")
 
 [node name="ОченьВажнаяВещь!" type="Sprite2D" parent="." unique_id=1305869176]
 position = Vector2(-28194.457, -2833.5)
@@ -173,13 +176,16 @@ sound_player = NodePath("../AudioStreamPlayer2D")
 position = Vector2(364, 520)
 shape = SubResource("RectangleShape2D_n34aw")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1846094971]
+[node name="Area2D2" type="Area2D" parent="." unique_id=1846094971 node_paths=PackedStringArray("cat_sprite")]
 z_index = 1
-position = Vector2(-6580, 94)
+position = Vector2(-6407, 820)
 script = ExtResource("4_hsrjk")
+cat_sprite = NodePath("../СнимокЭкрана20260825184531Photoroom")
+jump_texture = ExtResource("10_vejmf")
+sit_texture = ExtResource("17_f4qvh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1283525917]
-position = Vector2(-495, 685.99994)
+position = Vector2(-520, -19)
 scale = Vector2(54.91556, 7.564071)
 shape = SubResource("RectangleShape2D_d45qh")
 
