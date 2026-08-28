@@ -20,11 +20,13 @@ func _start_tea_cutscene():
 	# 2. ВКЛЮЧАЕМ ЗВУК ЧАЙНИКА
 	var kettle_audio = AudioStreamPlayer.new()
 	add_child(kettle_audio)
+	MusicManager.final_volume_db = 3	
 	MusicManager.play_special_song("res://assets/audio/Унесенные Ветром - Какао (hitmos.fm).mp3")
 	kettle_audio.stream = load("res://assets/audio/the-electric-kettle-boils (mp3cut.net).mp3") # Твой путь к звуку чайника!
 	if kettle_audio.stream:
 		kettle_audio.volume_db = -5.0
 		kettle_audio.play()
+
 	
 	# 3. ВОЗВРАТ ЦВЕТОВ И УБОРКА КРАСНОТЫ (плавно за 4 секунды)
 	if ShaderManager.has_method("fade_desaturation"):
@@ -46,10 +48,10 @@ func _trigger_final_monologue():
 	var camera = get_tree().current_scene.find_child("Camera2D", true, false) as Camera2D
 	
 	# === ТВОЙ И jasudas ГЛУБОКИЙ ФИНАЛЬНЫЙ ТЕКСТ ПОД СВИСТ ЧАЙНИКА ===
-	Subtitle.show_text("You open the door and step inside. The cold, heavy night remains outside.")
+	Subtitle.show_text("(Maybe I didn't make such a bad choice after all... it's cozy and peaceful here, and they'll even give me a pay raise!)")
 	await Subtitle.text_finished
 	
-	Subtitle.show_text("The kettle is already boiling, filling the small booth with warm steam.")
+	Subtitle.show_text("The kettle is boiling. Hot steam rises to the ceiling, warming you up on this cold winter evening.")
 	await Subtitle.text_finished
 	
 	# ШАГ 1: КОТИК ПРЫГАЕТ НА СТОЛ!

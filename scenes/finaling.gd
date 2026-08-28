@@ -64,6 +64,7 @@ func _trigger_bad_ending_cutscene(player: Node2D):
 	await Subtitle.text_finished
 	Subtitle.show_text("To be continued...")
 	await Subtitle.text_finished
+	GameManager.switch_to_scene("res://scenes/credits.tscn")
 	
 	# Возвращаем камеру игроку перед перезагрузкой
 	if camera:

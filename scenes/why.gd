@@ -23,24 +23,24 @@ func _start_scene(player: Node2D):
 	ShaderManager.fade_insanity(0.1, 1.0)
 	
 	# Твой диалог
-	#Subtitle.show_text("Greetings, traveler. Where are you heading?")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("Who are you?")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("Can't you see?")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("(Maybe because of my colorblindness I can't see him clearly...)")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("No, no, I see you! I'm just heading home. Where are you going?")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("I am heading home too. It looks like we're taking the same path, let's walk together.")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("(Of course I'd rather be alone, but I'd better agree just to be polite.)")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("Yeah, of course.")
-	#await Subtitle.text_finished
-	#Subtitle.show_text("(This is strange... how does he know that I'm heading home? But whatever.)")
-	#await Subtitle.text_finished 
+	Subtitle.show_text("Greetings, traveler. Where are you heading?")
+	await Subtitle.text_finished
+	Subtitle.show_text("Who are you?")
+	await Subtitle.text_finished
+	Subtitle.show_text("Can't you see?")
+	await Subtitle.text_finished
+	Subtitle.show_text("(Maybe because of my colorblindness I can't see him clearly...)")
+	await Subtitle.text_finished
+	Subtitle.show_text("No, no, I see you! I'm just heading home. Where are you going?")
+	await Subtitle.text_finished
+	Subtitle.show_text("I am heading home too. It looks like we're taking the same path, let's walk together.")
+	await Subtitle.text_finished
+	Subtitle.show_text("(Of course I'd rather be alone, but I'd better agree just to be polite.)")
+	await Subtitle.text_finished
+	Subtitle.show_text("Yeah, of course.")
+	await Subtitle.text_finished
+	Subtitle.show_text("(This is strange... how does he know that I'm heading home? But whatever.)")
+	await Subtitle.text_finished 
 	
 	player.set_physics_process(true)
 	

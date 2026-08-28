@@ -1,6 +1,8 @@
 extends Node
 
-@export var final_volume_db: float = -10.0 
+@export var bg_volume_db: float = -17.0
+@export var final_volume_db: float = -10.0
+
 var music_player: AudioStreamPlayer = null
 var playlist: Array[String] = [
 	"res://assets/audio/kevin-macleod-horizon.mp3",
@@ -37,7 +39,7 @@ func _play_random_track():
 
 	if track:
 		music_player.stream = track
-		music_player.volume_db = -17.0
+		music_player.volume_db = bg_volume_db
 
 		if music_player.stream.has_method("set_loop"):
 			music_player.stream.set_loop(false)
@@ -86,3 +88,11 @@ func pause():
 func resume():
 	if music_player and music_player.stream:
 		music_player.play()
+
+func set_bg_volume(value_db: float):
+	if music_player and not is_final_credits:
+		music_player.volume_db = value_db
+
+func set_final_volume(value_db: float):
+	if music_player and is_final_credits:
+		music_player.volume_db = value_db
