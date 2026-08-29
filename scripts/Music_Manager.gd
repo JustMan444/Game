@@ -13,7 +13,7 @@ var is_final_credits: bool = false
 func _ready():
 	if is_final_credits:
 		return
-	_start_background_music()
+	#_start_background_music()
 
 func _start_background_music():
 	if playlist.is_empty():

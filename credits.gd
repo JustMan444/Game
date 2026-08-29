@@ -5,6 +5,11 @@ extends Control
 func _ready():
 	#MusicManager.stop_everything()
 	MusicManager.play_special_song("res://assets/audio/Ray_Parker_-_Ghostbusters_OST_Okhotniki_za_privedeniyami_28528277.mp3")
+	MusicManager.final_volume_db = -100
+	var audio_tween = create_tween()
+	audio_tween.tween_property(MusicManager.music_player, "volume_db", -10.0, 3.0)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
 	#MusicManager.stop_everything()
 	#var final_audio_player = AudioStreamPlayer.new()
 	#add_child(final_audio_player)
@@ -46,13 +51,13 @@ func _ready():
 	Just_Man444
 	
 	Lead Narrative Designer / Writer:
-	jasudas
+	sssaden
 	
 	Level Design / Art:
 	Just_Man444
 	mosh_
 	
-	Management / Moral Support:
+	Management / Moral Support / Music in main menu:
 	SeeSharp
 	
 	
@@ -61,6 +66,7 @@ func _ready():
 	
 	To the Brackeys Game Jam 2026 organizers.
 	To everyone who supported us through sleepless nights.
+	To You, The Player.
 	
 	And...
 	To the 2D Cube that chased us at a speed of 601.0 pixels.
@@ -74,7 +80,8 @@ func _ready():
 	"Thank you for playing! Have you unlocked all the endings? 🇷🇺" 
 	— (Just_Man444)
 	
-	
+	"Don't try this at home."
+	- (sssaden)
 	
 	To be continued...
 	
@@ -99,10 +106,10 @@ func _start_credits_scroll():
 	var tween = create_tween()
 	
 	# Плавная скорость хода: 18 секунд, чтобы игроки успели с кайфом дочитать твои цитаты!
-	tween.tween_property(credits_text, "position:y", target_y, 100.0).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(credits_text, "position:y", target_y, 80.0).set_trans(Tween.TRANS_LINEAR)
 	
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 	
 	print("ТИТРЫ ОКОНЧЕНЫ. Возврат в главное меню.")
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://main_menu.tscn")

@@ -16,9 +16,9 @@ func interact():
 	# Защита от спама кнопкой E: если диалог идёт, повторные нажатия игнорируются
 	if waiting_for_choice: return
 	waiting_for_choice = true
-	
+	#Greetings, comrade traveler. Please, let an old man into the scrapyard, I just need to gather some empty bottles for kopecks. Twenty years ago, my family home burned to ashes—documents, savings, everything perished.
 	# 2. Включаем стартовую реплику встречи через твой глобальный синглтон
-	Subtitle.show_text("Greetings, comrade traveler. Please, let an old man into the scrapyard, I just need to gather some empty bottles for kopecks. Twenty years ago, my family home burned to ashes—documents, savings, everything perished.")
+	Subtitle.show_text("Greetings, comrade traveler. Please, let an old man into the scrapyard, I just need to gather some empty bottles for kopecks. Twenty years ago, my family home burned to ashes. Documents, savings, everything perished.")
 	await Subtitle.text_finished
 	Subtitle.show_text("Who has any use for a broken Soviet old-timer now?")
 	await Subtitle.text_finished

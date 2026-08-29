@@ -31,7 +31,7 @@ func _trigger_bad_ending_cutscene(player: Node2D):
 	add_child(sound_player)
 	# Перетащи свой файл скримера в инспекторе триггера в поле ниже, если хочешь, 
 	# либо просто загрузи любой mp3/wav файл из папки проекта:
-	sound_player.stream = load("res://sound/glitch_screamer.mp3") # Поменяй путь на свой аудиофайл!
+	sound_player.stream = load("res://assets/audio/cbb07bc7cf2316c.mp3") # Поменяй путь на свой аудиофайл!
 	sound_player.play()
 	
 	# 3. КИНЕМАТОГРАФИЧНЫЙ УЛЕТ КАМЕРЫ В НЕБО ЧЕРЕЗ ТВИНИНГ

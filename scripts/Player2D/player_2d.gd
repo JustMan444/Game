@@ -22,8 +22,8 @@ func _physics_process(delta):
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	if Input.is_key_pressed(KEY_R): 
-		GameManager.switch_to_scene("res://scenes/world.tscn")
+	#if Input.is_key_pressed(KEY_R): 
+		#GameManager.switch_to_scene("res://scenes/world.tscn")
 		
 	# Прыжок
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -114,7 +114,7 @@ func _on_interact_zone_body_entered(body: Node2D) -> void:
 		nearby_object = body
 		can_interact = true
 		if hint_label:
-			hint_label.text = "Нажмите E"
+			hint_label.text = "Press E"
 			hint_label.show()
 
 func _on_interact_zone_body_exited(body: Node2D) -> void:
@@ -127,8 +127,7 @@ func _on_interact_zone_area_entered(area: Area2D) -> void:
 		nearby_object = area
 		can_interact = true
 		if hint_label:
-			hint_label.text = "Нажмите E"
-			TextManager.show_text("Этот текст будет печататься медленно", 0.5, 50.0)
+			hint_label.text = "Press E"
 			hint_label.show()
 
 func _on_interact_zone_area_exited(area: Area2D) -> void:

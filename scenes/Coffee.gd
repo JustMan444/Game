@@ -98,16 +98,22 @@ func _trigger_final_monologue():
 		var target_sky_position = Vector2(self.global_position.x, self.global_position.y - 1500.0)
 		
 		# Камера пафосно ускоряется и улетает сквозь крышу будки в стратосферу за 3.5 секунды!
-		camera_tween.tween_property(camera, "global_position", target_sky_position, 10.0)\
+		camera_tween.tween_property(camera, "global_position", target_sky_position, 3.5)\
 			.set_trans(Tween.TRANS_CUBIC)\
 			.set_ease(Tween.EASE_IN_OUT)
-	await Subtitle.text_finished
-	
+	#await Subtitle.text_finished
+	#
 	#Subtitle.show_text("You chose yourself. Your shift is officially over, Yaroslav.")
 	#await Subtitle.text_finished
-	
+	#
 	# Даем игроку посмотреть на крошечную будку с высоты птичьего полета
-	await get_tree().create_timer(1.5).timeout
+	var audio_tween = create_tween()
+	audio_tween.tween_property(MusicManager.music_player, "volume_db", -120.0, 2.0)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
+		
+	await get_tree().create_timer(2.0).timeout
+	
 	
 	# Мягко гасим экран перед титрами во тьму за 1 секунду
 	if ShaderManager.has_method("fade_desaturation"):
@@ -116,4 +122,4 @@ func _trigger_final_monologue():
 	await get_tree().create_timer(1.0).timeout
 	
 	# УХОДИМ НА НАШИ ИДЕАЛЬНЫЕ ТИТРЫ С ЦИТАТАМИ И ФЛАГОМ!
-	get_tree().change_scene_to_file("res://scenes/Credits.tscn")
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
